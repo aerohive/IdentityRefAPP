@@ -1,0 +1,19 @@
+.LoginPage .page-footer a,.LoginPage .page-footer a:link,.LoginPage .page-footer a:visited,.LoginPage .page-footer a:active,.LoginPage .page-footer a:hover {
+    color:#28B463;
+    font-weight:400;
+    font-size:14px
+}
+.LoginPage .page-footer span {
+    display:inline-block;
+    height:20px;
+    border-left:1px solid #6f6f6f;
+    margin-left:2px
+}
+.LoginPage .page-footer {
+    font-size:14px;
+    font-weight:400;
+    color:#909090;
+    position:absolute;
+    top:832px;
+    left:21px
+}

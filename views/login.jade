@@ -4,9 +4,13 @@ html
         title= title
         script(language="JavaScript" type="text/javascript" src='/js/jquery-2.1.1.min.js')
         script(language="JavaScript" type="text/javascript" src='/js/bootstrap.min.js')
-        link(rel='stylesheet' href='/css/ah-styles.min.css')
         link(rel='stylesheet' href='/css/bootstrap.min.css')
-        link(rel='stylesheet' href='/css/ah-tm.init.css')
+        link(rel='stylesheet' href='/css/ah-tm.css')
+        link(rel='stylesheet' href='/css/ah-tm.login.css')
+        link(rel='stylesheet' href='/css/ah-tm.sizes.css')
+        link(rel='stylesheet' href='/css/ah-tm.footer.css')
+        link(rel='stylesheet' href='/css/ah-tm.input.css')
+        link(rel='stylesheet' href='/css/ah-tm.dropdown.css')
     body
         div(style="border-top: 2px solid rgb(255, 195, 15);" class="user-home-wrap")
         div.clearfix(id='main')
@@ -14,7 +18,6 @@ html
                 div(id="container")
                     div.grid_20.LoginPage
                         img(src="/images/login_page_logo.png" alt="Aerohive" class="ah-logo")
-                        div.ah-growing-hives
                         div.page-footer
                             span(style="border: none;") © 2016 Aerohive Networks. All Rights Reserved.
 
@@ -39,16 +42,16 @@ html
                                             div.login-form
                                                 form(id="AT" action="/" method="post")
                                                     div.dropdown
-                                                        button(id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                                        button.dropdown-323(id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
                                                             span.init-text(id="server") Select Server
                                                             span.caret
-                                                        ul.dropdown-menu(aria-labelledby="dLabel")
+                                                        ul.dropdown-menu.dropdown-323(aria-labelledby="dLabel")
                                                             li(onclick="selectServer('cloud-va.aerohive.com')") cloud-va.aerohive.com
                                                             li(onclick="selectServer('cloud-ie.aerohive.com')") cloud-ie.aerohive.com
                                                     input(id="vpcUrl" name="vpcUrl" required="required" type="hidden")
                                                     input(placeholder="Owner ID" required="required" autocorrect="off" autocapitalize="none" name="ownerID" type="text")
                                                     input(placeholder="Access Token" required="required" name="accessToken" type="text")
-                                                    input.blue-button(value="See Data" type="submit")
+                                                    input.button(value="See Data" type="submit")
                                                 span='For more information, a Quick Start Guide is available '
                                                 a(href="/howto/" target='_blank') here
 
@@ -65,7 +68,7 @@ html
                                                     span="You can find some information about OAuth on the "
                                                         a(href="https://en.wikipedia.org/wiki/OAuth" target="_blank") OAuth Wiki page
                                                     span .
-                                                input.blue-button(value="Go to HMNG Authentication page" type="submit" style="margin: auto;text-align: center;")
+                                                input.button(value="Go to HMNG Authentication page" type="submit" style="margin: auto;text-align: center;")
 
 
 

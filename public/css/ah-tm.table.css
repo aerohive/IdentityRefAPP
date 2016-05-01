@@ -1,0 +1,83 @@
+table {
+    width: 99%;
+    margin-bottom: 20px;
+    font-size: 12px !important;
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    float: right;
+}
+
+table td {
+    height: auto;
+    cursor: default;
+}
+
+table thead th {
+    vertical-align: bottom;
+    font-weight: bold;
+
+}
+
+table thead tr th {
+    background: left;
+    color: #000;
+    text-align: left;
+    border: medium none;
+    border-bottom: solid 2px #aaa;
+    border-top: solid 2px #aaa;
+    font-weight: normal;
+    transition: background .3s ease-out;
+}
+
+
+
+table th, table td {
+    padding: 15px 0;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: middle;
+    border-top: 1px solid #ddd;
+}
+
+
+
+table tbody tr {
+    transition: all 0.2s ease-in-out;
+}
+
+.ui-grid-bottom-right {
+    padding-top: 5px;
+    margin-right: 5px;
+}
+
+.fn-right {
+    float: right;
+}
+.ui-grid-bottom-left {
+    padding-top: 5px;
+    margin-left: 5px;
+}
+
+.fn-left {
+    float: left;
+}
+.pagination {
+    margin: 0 !important;
+    list-style: none;
+    padding: 0;
+}
+.pagination .fa {
+    margin: auto 5px;
+    color: #3694D1;
+}
+
+.pagination li {
+    float: left;
+}
+
+.ui-page-item-disable {
+ color: gray;
+    cursor: not-allowed;
+}

@@ -1,0 +1,336 @@
+input.form-control, span.input-group-addon {
+    border-radius: 0;
+    font-size: 12px !important;
+
+    transition:all .2s ease-in-out
+}
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus,textarea:focus,select:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+
+input.chkbox {
+    margin: 0 1em 0 -2em;
+
+}
+input[type=text] {
+    border: 1px solid #999;
+    line-height: 25px;
+    padding: 0 10px;
+}
+
+
+
+/*============================================== /
+/ ==================  BUTTON  ================== /
+/ ============================================== */
+
+button:focus, input.button:focus {
+    outline: none;
+}
+
+button, input.button{
+    border: none;
+    background-color: #28B463;
+    color: #fff;
+    border-radius: 0;
+    display: inline-block;
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    font-family: Helvetica;
+    letter-spacing: 1px;
+    -moz-transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 15px;
+    position: relative;
+    border: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false) !important;
+}
+button.large, input.button.large{
+    width: 323px;
+    padding: 1em 1em 1em 18px;
+}
+button:hover, input.button:hover{
+    background-color: #2ECC71;
+    box-shadow: 0 0 1px 1px rgba(100,100,100,0.5) inset;
+    transition:all .2s ease-in-out;
+}
+button:hover a, button:hover i {
+    background-color: #2ECC71;
+    transition:all .2s ease-in-out;
+}
+
+button.disabled, button.disabled:hover,
+button[disabled], button[disabled]:hover,
+input.button.disabled, input.button.disabled:hover,
+input.button[disabled], input.button[disabled]:hover{
+    background-color: #939598 !important;
+    box-shadow: 0 0 1px 1px rgba(100,100,100,0.5) inset;
+    transition:all .2s ease-in-out;
+}
+label.disabled {
+    color: #939598 !important;
+    transition:all .2s ease-in-out;
+}
+
+/*============================================== /
+/ ==================  HREF  ================== /
+/ ============================================== */
+
+.cur a, .nav-item a:hover {
+    text-decoration: none;
+    background-color: #f7f7f7;
+    color: #231f20;
+}
+a:link {
+    color: #28B463;
+}
+a {
+    color: #28B463;
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+
+/*============================================== /
+/ ================  LIST CARDS  =============== /
+/ ============================================== */
+.ui-select-card-item {
+    float: left;
+    margin: 0 70px 15px 0;
+}
+.ui-select-card {
+    transition: all 0.1s ease-in-out;
+}
+.ui-select-card:hover {
+    border-color: #28B463;
+    transition: all 0.1s ease-in-out;
+}
+.ui-select-card-selected {
+    border-color: #28B463;
+    background-color: #28B463;
+}
+.ui-select-card {
+    width: 200px;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    height: 35px;
+    overflow: hidden;
+}
+.ui-select-card-con {
+    overflow: hidden;
+}
+
+.ui-select-card-con p {
+    margin: 0;
+}
+.ui-select-card-selected .ui-select-card-con > p {
+    color: #fff;
+}
+.ui-select-card-title {
+    font-size: 14px;
+}
+
+/*============================================== /
+/ ================  CHECKBOX  =============== /
+/ ============================================== */
+input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="radio"][readonly], input[type="checkbox"][readonly] {
+    background-color: transparent;
+}
+
+input.ace-switch-7[type="checkbox"] {
+    width: 75px;
+}
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
+    cursor: not-allowed;
+    background-color: #eee;
+}
+input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
+    width: auto;
+}
+input[type="checkbox"], input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    z-index: 12;
+    width: 18px;
+    height: 18px;
+}
+
+input.ace-switch-7[type="checkbox"] + .lbl {
+    position: relative;
+}
+input[type="checkbox"] + .lbl, input[type="radio"] + .lbl {
+    position: relative;
+    z-index: 11;
+    display: inline-block;
+    margin: 0;
+    line-height: 20px;
+    min-height: 14px;
+    min-width: 14px;
+    font-weight: normal;
+}
+label, input, button, select, textarea, input[type="checkbox"] + .lbl, input[type="radio"] + .lbl {
+    font-size: 12px;
+}
+label, .lbl {
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:checked + .lbl::before, input[type="radio"]:checked + .lbl::before {
+    display: inline-block;
+    content: '\f00c';
+    background-color: #f5f8fc;
+    border-color: #0093d1;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05),inset 0 -15px 10px -12px rgba(0,0,0,0.05),inset 15px 10px -12px rgba(255,255,255,0.1);
+}
+
+input.ace-switch-7[type="checkbox"]:checked + .lbl::before {
+    color: #468fcc;
+    background-color: #FFF;
+    text-indent: -33px;
+    border-color: #6fb3e0;
+}
+input.ace-switch-7[type="checkbox"]:checked + .lbl::after {
+    left: 3px;
+    content: '\f00c';
+    background-color: #468fcc;
+    color: #FFF;
+}
+input[type="checkbox"]:checked + .lbl.switch-label::before {
+    border: 2px solid #0093d1 !important;
+}
+
+
+input.ace-switch-7[type="checkbox"] + .lbl::before {
+    font-family: Arial,Helvetica,sans-serif;
+    content: "OFF\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0ON";
+    font-weight: bolder;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-block;
+    background-color: #FFF;
+    border: 2px solid #AAA;
+    border-radius: 0;
+    box-shadow: none;
+    color: #aaa;
+    width: 70px;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    text-indent: 4px;
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    transition: all .2s ease;
+}
+input[type="checkbox"]:disabled + .lbl::before, input[type="radio"]:disabled + .lbl::before {
+    background-color: #DDD !important;
+    border-color: #CCC !important;
+    box-shadow: none !important;
+    color: #BBB;
+}
+input[type="checkbox"] + .lbl::before, input[type="radio"] + .lbl::before {
+    font-family: fontAwesome;
+    font-weight: normal;
+    font-size: 11px;
+    color: #32a3ce;
+    content: "\a0";
+    display: inline-block;
+    background-color: #fafafa;
+    border: 1px solid #999;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border-radius: 0;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    height: 13px;
+    line-height: 13px;
+    min-width: 13px;
+    margin-right: 10px;
+    margin-top: 0;
+}
+
+
+input.ace-switch-7[type="checkbox"] + .lbl::after {
+    content: '\f00d';
+    font-family: FontAwesome;
+    font-size: 16px;
+    position: absolute;
+    top: 3px;
+    left: 39px;
+    width: 32px;
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    background-color: #aaa;
+    color: #FFF;
+    border-radius: 0;
+    box-shadow: none;
+    transition: all .2s ease-in-out;
+}
+
+input[type="checkbox"]:focus, input[type="radio"]:focus, input[type="checkbox"]:checked, input[type="radio"]:checked {
+    outline: none !important;
+}
+
+
+/*============================================== /
+/ ================  SELECT  =============== /
+/ ============================================== */
+
+select {
+    width: 220px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+select, input[type="file"] {
+    height: 30px;
+    *margin-top: 4px;
+    line-height: 30px;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    display: inline-block;
+    height: 20px;
+    padding: 4px 6px;
+    font-size: 14px;
+    font-family: helvetica,arial,san-serif;
+    line-height: 20px;
+    color: #717174;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    background-color: #fff;
+    border: 1px solid #999;
+    -webkit-transition: border linear .1s,box-shadow linear .1s;
+    -moz-transition: border linear .1s,box-shadow linear .1s;
+    -o-transition: border linear .1s,box-shadow linear .1s;
+    transition: border linear .1s,box-shadow linear .1s;
+}

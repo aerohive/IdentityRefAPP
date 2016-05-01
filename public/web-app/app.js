@@ -321,11 +321,15 @@ identity.controller("CredentialsCtrl", function ($scope, userTypesService, userG
     var requestForCredentials = null;
     var requestForUserGroups = null;
     var initialized = false;
+    $scope.displayFilters = false;
     $scope.exportFields = exportService.getFields();
     $scope.userTypes = userTypesService.getUserTypes();
     $scope.itemsByPage = 10;
     $scope.selectAllChecked = false;
 
+    $scope.changeDisplayFilters = function(){
+        $scope.displayFilters = ! $scope.displayFilters;
+    };
 
     if (requestForUserGroups) requestForUserGroups.abort();
     requestForUserGroups = userGroupsService.getUserGroups();
@@ -644,7 +648,9 @@ identity.directive("sub-create", function () {
 
 });
 
-identity.controller("HeaderCtrl", function ($scope, $location) {
+identity.controller("NavCtrl", function ($scope, $location) {
+    $scope.displayCreate = false;
+    $scope.displayAdmin = false;
     $scope.appDetails = {};
 
     $scope.nav = {};
@@ -656,7 +662,14 @@ identity.controller("HeaderCtrl", function ($scope, $location) {
     $scope.subnav.isActive = function (path) {
         if (path === $location.path().toString().split("/")[2]) return true;
         else return false;
-    }
+    };
+    $scope.changeDisplayCreate = function(){
+        $scope.displayCreate = ! $scope.displayCreate;
+    };
+    $scope.DisplayAdmin = function(){
+        $scope.displayAdmin = ! $scope.displayAdmin;
+    };
+
 });
 identity.directive('fileChange', ['$parse', function ($parse) {
     return {

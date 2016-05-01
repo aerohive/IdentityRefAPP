@@ -1,7 +1,12 @@
 <div class="pt-r">
-    <div id="container">
-        <div class="line clearfix">
+
             <div class="view-section clearfix">
+                <div style='width:100%; height: 75px;'>
+                    <div class="top-button" style='width:100%; border-top: 2px solid rgb(255, 195, 15);'>
+                        <div class="top-button"style="top:2px">
+                        </div>
+                    </div>
+                </div>
                 <div class="dashboard-main" style="margin: auto; float: none">
 
                     <div class="ui-sec-tle">
@@ -166,8 +171,8 @@
                             </div>
                         </div>
                         <div class="clearfix">
-                            <button class="btn btn-primary" ng-click="reset()">Reset</button>
-                            <input ng-disabled="isNotValid()" type="button" class="btn btn-primary"
+                            <button class="button" ng-click="reset()">Reset</button>
+                            <input ng-disabled="isNotValid()" type="button" class="button"
                                    ng-click="create()"
                                    value="Create">
                         </div>
@@ -177,7 +182,7 @@
                     <div class="ui-sec-tle" ng-show="displayResult()">
                         <div class="clearfix">
                             <h3>Import Result</h3>
-                            <button class='ui-button ui-button-dBlue ui-button-small' ng-controller="ModalCtrl"
+                            <button ng-controller="ModalCtrl"
                                     ng-click="open('exportBulk')" style="margin: 5px 0">Export
                             </button>
                             <uib-progressbar max="max" value="(createdAccountsFinished/numberOfAccounts)*100"><span
@@ -221,5 +226,3 @@
             </div>
         </div>
     </div>
-</div>
-</div>

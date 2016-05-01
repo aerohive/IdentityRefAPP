@@ -1,0 +1,102 @@
+/*============================================== /
+/ ================== HEADER ==================== /
+/ ============================================== */
+#header {
+    background-color: #2C3E50;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    min-width: 1220px;
+}
+/*============================================== /
+/ ================== TOP HEADER ================ /
+/ ============================================== */
+
+/* =================MENU======================= */
+.login-area {
+    float: left;
+    position: relative;
+    width: 1000px;
+    z-index: 948;
+}
+.head-nav {
+    float: left;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transition: opacity 1s ease;
+    transition: opacity 1s ease;
+    margin: 0;
+    padding: 0;
+}
+
+
+.hdrOptions {
+    margin-top: 27px;
+    position: absolute;
+    right: 0;
+}
+
+/*============================================== /
+/ =============== BOTTOM HEADER ================ /
+/ ============================================== */
+.head-bottom .sub-tabs {
+    height: 45px;
+    width: 1220px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #f7f7f7;
+    border-radius: 10px 10px 0 0;
+}
+.head-bottom .sub-tabs > ul {
+    margin-left: 234px;
+}
+.head-bottom .sub-tabs ul {
+    display: block;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+}
+.head-bottom .sub-tabs ul li {
+    margin-right: 30px;
+    display: inline-block;
+    margin-top: 13px;
+    position: relative;
+    line-height: 20px;
+}
+
+.head-bottom .sub-tabs ul li a {
+    padding: 10px;
+    margin-top: 3px;
+    border-bottom: 3px solid #f7f7f7;
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    transition: all .2s ease-in-out;
+}
+
+.head-bottom .sub-tabs ul li.cur a, .head-bottom .sub-tabs ul li:hover a {
+    color: #231f20;
+    text-decoration: none;
+    border-bottom: 3px solid #28B463;
+    transition: all .2s ease-in-out;
+}
+.head-bottom .sub-tabs ul li a {
+    padding: 10px;
+    margin-top: 3px;
+    border-bottom: 3px solid #f7f7f7;
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    transition: all .2s ease-in-out;
+}
+.head-bottom .sub-tabs ul li.cur span.arrow, .head-bottom .sub-tabs ul li:hover span.arrow {
+    border-bottom: 5px solid #28B463;
+    transition: all .2s ease-in-out;
+}
+.head-bottom .sub-tabs ul li span.arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #f7f7f7;
+    position: absolute;
+    bottom: -8px;
+    left: 43%;
+    transition: all .2s ease-in-out;
+}

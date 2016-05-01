@@ -1,0 +1,94 @@
+
+/*============================================== /
+/ ===================== NAV ==================== /
+/ ============================================== */
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #2C3E50;
+    border-radius: 0;
+    width: 300px;
+    min-height: 100%;
+    float: left;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+    border-top: 2px solid rgb(255, 195, 15);
+}
+/* =================LOGO======================= */
+.head-inner > .logo {
+    margin: 0;
+}
+.logo {
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    height: 75px;
+    vertical-align: middle;
+}
+.app-logo {
+    cursor: pointer;
+    margin: auto;
+    padding: 10px 0;
+    height: 55px;
+    vertical-align: middle;
+}
+/* ===================== HREF ==================== */
+nav a {
+    float: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    background-color: #2C3E50;
+    color: #fff !important;
+    line-height: 10px;
+    letter-spacing: .02em;
+}
+
+nav a:hover{
+    color: #000;
+    background-color: #a6e1ad !important;
+    border-radius: 0;
+
+}
+nav a {
+    display: block;
+    color: #FFFFFF;
+    background-color: #28B463;
+    border-radius: 0;
+    width: 100%;
+}
+
+nav p {
+    font-size: 0.7em;
+    margin: auto;
+}
+/* ===================== LIST ==================== */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav li{
+    display: block;
+    width: 100%;
+    background-color: white;
+}
+
+
+nav .cur a, nav .cur a:hover {
+    text-decoration: none;
+    color: #000 !important;
+    background-color: #FFF;
+
+}
+
+nav li div {
+    padding: 37px 24px 33px;
+
+}
+

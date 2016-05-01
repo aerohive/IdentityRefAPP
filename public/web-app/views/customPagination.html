@@ -1,19 +1,19 @@
-<nav ng-if="pages.length >= 2">
-    <ul class="pagination ui-grid-pages">
+<div ng-if="pages.length >= 2" class="pagination-container">
+    <ul class="pagination">
         <li class="ui-page-item-nav">
-            <a ng-click="selectPage(1)" ng-class="{'ui-page-item-disable': currentPage === 1}" class="J-page-first ui-page-item-first"></a>
+            <a ng-click="selectPage(1)" ng-class="{'ui-page-item-disable': currentPage === 1}" class="fa fa-angle-double-left"></a>
         </li>
         <li class="ui-page-item-nav">
-            <a ng-click="selectPage(currentPage - 1)" ng-class="{'ui-page-item-disable': currentPage === 1}" class="J-page-prev ui-page-item-prev"></a>
+            <a ng-click="selectPage(currentPage - 1)" ng-class="{'ui-page-item-disable': currentPage === 1}" class="fa fa-angle-left"></a>
         </li>
         <li class="ui-page-item-nav">
             <span>{{currentPage}}/{{numPages}}</span>
         </li>
         <li class="ui-page-item-nav">
-            <a ng-click="selectPage(currentPage + 1)" ng-class="{'ui-page-item-disable': currentPage === numPages}" class="J-page-next ui-page-item-next"></a>
+            <a ng-click="selectPage(currentPage + 1)" ng-class="{'ui-page-item-disable': currentPage === numPages}" class="fa fa-angle-right"></a>
         </li>
         <li class="ui-page-item-nav">
-            <a ng-click="selectPage(numPages)" ng-class="{'ui-page-item-disable': currentPage === numPages}" class="J-page-last ui-page-item-last"></a>
+            <a ng-click="selectPage(numPages)" ng-class="{'ui-page-item-disable': currentPage === numPages}" class="fa fa-angle-double-right"></a>
         </li>
         <li class="pageNumWrap">
             <input type="text" style="height: 16px;" ng-model="customPage" class="ui-page-num">
@@ -21,4 +21,4 @@
         </li>
     </ul>
 
-</nav>
+</div>

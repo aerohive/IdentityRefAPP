@@ -3,9 +3,16 @@ html
     head
         title= title
         link(rel='stylesheet' href='/css/font-awesome.min.css')
-        link(rel='stylesheet' href='/css/ah-styles.min.css')
+        link(rel='stylesheet' href='/css/ah-tm.table.css')
         link(rel='stylesheet' href='/css/ah-tm.dashboard.css')
-        link(rel='stylesheet' href='/css/borderContainer.css')
+        link(rel='stylesheet' href='/css/ah-tm.css')
+        link(rel='stylesheet' href='/css/ah-tm.sizes.css')
+        link(rel='stylesheet' href='/css/ah-tm.footer.css')
+        link(rel='stylesheet' href='/css/ah-tm.input.css')
+        link(rel='stylesheet' href='/css/ah-tm.header.css')
+        link(rel='stylesheet' href='/css/ah-tm.dropdown.css')
+        link(rel='stylesheet' href='/css/ah-tm.nav.css')
+        link(rel='stylesheet' href='/css/ah-tm.top-button.css')
         link(rel='stylesheet' href='/js/bootstrap.min.js')
         script(src="/web-app/angular.js")
         script(src="/web-app/smart-table.js")
@@ -16,7 +23,7 @@ html
         script(src="/web-app/ng-csv.js")
         block include
 
-    body.claro.fullaccess(ng-app="identity")
+    body(ng-app="identity")
         div.modal.fade.bs-example-modal-lg(ng-controller="ModalCtrl")
             script(type="text/ng-template" id="modalAboutContent.html")
                 div.modal-header
@@ -36,39 +43,33 @@ html
                 div.modal-footer
                     a(class="btn btn-primary" ng-click="close()") Close
 
-        div.header(id="header" ng-controller="HeaderCtrl")
-            div.head-inner
-                h1.logo
-                    img.app-logo(src="/images/logo_nav.png" alt="Aerohive")
-                div.login-area(id="appHeader")
-                    ul.head-nav
-                div.login-area
-                    ul.head-nav
-                        li(class = "nav-item" ng-class="{cur: nav.isActive('credentials')}")
-                            a.nav-dashboard(href="#/credentials/") Credentials
-                        li(class = "nav-item" ng-class="{cur: nav.isActive('create')}")
-                            a.nav-dashboard(href="#/create/single") Create
-                        li(class = "nav-item" ng-class="{cur: nav.isActive('import')}")
-                            a.nav-dashboard(href="#/import/") Import
-                    div.head-options.hdrOptions
-                         div.ah-navsprite-icons.ah-navsprite-user
-                            div.head-sta-item.sta-user.hdrUser
-                                div.sta-item-con
-                                    div.sta-item-con-arrow
-                                    ul.user-list
-                                        li.user-list-item-first(ng-controller="ModalCtrl" ng-click="open('about')") Account Details
-                                        li
-                                            a(href="/logout/") Logout
-                                span.sta-item-bridge
-            div.head-bottom
-                div.sub-tabs
-                    ul.sub-create(ng-show="nav.isActive('create')")
-                        li(ng-class="{cur: subnav.isActive('single')}")
-                            a(href="#/create/single") Single Account
-                            span.arrow
-                        li(ng-class="{cur: subnav.isActive('bulk')}")
-                            a(href="#/create/bulk") Bulk Accounts
-                            span.arrow
 
-        div.clearfix(id="main")
+
+        nav(ng-controller="NavCtrl")
+            h1.logo
+                img.app-logo(src="/images/logo_nav.png" alt="Aerohive")
+            div
+                ul
+                    li(ng-class="{cur: nav.isActive('credentials')}")
+                        a(href="#/credentials/")
+                            div Credentials
+                    li(ng-class="{cur: nav.isActive('create')}")
+                        a(ng-click="changeDisplayCreate()")
+                            div Create
+                        div.sub-tabs
+                            ul.sub-create(ng-show="displayCreate")
+                                li(ng-class="{cur: subnav.isActive('single')}")
+                                    a(href="#/create/single") Single Account
+                                li(ng-class="{cur: subnav.isActive('bulk')}")
+                                    a(href="#/create/bulk") Bulk Accounts
+                    li(ng-class="{cur: nav.isActive('import')}")
+                        a(href="#/import/")
+                            div Import
+                    li(ng-class="{cur: nav.isActive('logout')}")
+                        a(href="/logout/")
+                            div Logout
+
+
+
+        section
             ng-view
