@@ -197,9 +197,9 @@ identity.controller("UserCtrl", function ($scope, $rootScope, $mdDialog, $mdSide
     var originatorEv;
     $rootScope.hmngType = angular.element('#hmngType').val();
     
-    this.openMenu = function ($mdOpenMenu, ev) {
+    this.openMenu = function ($mdMenu, ev) {
         originatorEv = ev;
-        $mdOpenMenu(ev);
+        $mdMenu.open(ev);
     };
     this.sideNav = function (id) {
         $mdSidenav(id).toggle()

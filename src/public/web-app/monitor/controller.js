@@ -118,8 +118,8 @@ angular.module('Monitor').controller("MonitorCtrl", function ($scope, monitorSer
         else return user.userName + " is currently connected.";
     };
     $scope.userColor = function (user) {
-        if (user.clients.length == 0) return "color: #aca5a3";
-        else return "color: #75D064";
+        if (user.clients.length == 0) return "{color: '#aca5a3'}";
+        else return "{color: '#75D064'}";
     };
     $scope.userConnected = function (user) {
         return user.clients.length > 0;
@@ -138,16 +138,16 @@ angular.module('Monitor').controller("MonitorCtrl", function ($scope, monitorSer
         else return "red";
     };
     $scope.clientColor = function (healthScore) {
-        if (healthScore == 100) return "color: #75D064";
-        else if (healthScore >= 50) return "color: #FFCF5C";
-        else return "color: #d04d49";
+        if (healthScore == 100) return "{color: '#75D064'}";
+        else if (healthScore >= 50) return "{color: '#FFCF5C'}";
+        else return "{color: '#d04d49'}";
     };
     $scope.showClients = function (user) {
         if (user.showClients == true) user.showClients = false;
         else if (user.clients.length > 0)user.showClients = true;
     };
     $scope.clientsLink = function (user) {
-        if (user.clients.length > 0) return "color: #0093D1;text-decoration: underline;";
+        if (user.clients.length > 0) return "{'color': '#0093D1', 'text-decoration': 'underline'}";
         else return "";
     }
 });

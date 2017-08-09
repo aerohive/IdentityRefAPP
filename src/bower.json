@@ -20,7 +20,6 @@
      	"angular-material-data-table": "^0.10.10",
      	"jquery": "^2.2.4",
      	"bootstrap": "^3.3.7",
-     	"material-design-icons": "^3.0.1",
      	"angular-qrcode": "monospaced/angular-qrcode#^6.2.1",
      	"ng-intl-tel-input": "^1.4.0"
   }

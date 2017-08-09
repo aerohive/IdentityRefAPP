@@ -8,7 +8,6 @@ html
         script(src="/i18n/web-app/fr.js")
 
         link(rel="stylesheet" href="/bower_components/intl-tel-input/build/css/intlTelInput.css")
-        link(rel="stylesheet" href="/bower_components/material-design-icons/iconfont/material-icons.css")
         link(rel="stylesheet" href="/bower_components/angular-material-data-table/dist/md-data-table.min.css")
         link(rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css")
         link(rel='stylesheet' href='/css/ah-tm.dashboard.css')
@@ -83,32 +82,32 @@ html
                     img(src="/images/logo_nav.png" alt="Aerohive")
                 span(flex)
                 md-menu
-                    md-button(aria-label="language" ng-click="UserCtrl.openMenu($mdOpenMenu, $event)" style="min-width: 20px;")
+                    md-button(aria-label="language" ng-click="UserCtrl.openMenu($mdMenu, $event)" style="min-width: 20px;")
                         md-tooltip(md-direction="bottom" md-visible="tooltipVisible") {{"button.language" | translate}}
-                        md-icon(class="material-icons" aria-label="language") language
+                        md-icon(md-menu-align-target md-svg-src="/images/icons/ic_language_24px.svg")
                     md-menu-content
                         md-menu-item
-                            md-button(ng-controller="ModalCtrl" ng-click="UserCtrl.translate('en')")
+                            md-button(ng-controller="ModalCtrl" ng-click="UserCtrl.translate('en')" aria-label="English")
                                 span(style="display: inline-flex; margin-right: 5px;")
                                     div.iti-flag.gb
                                 span English
                         md-menu-item
-                            md-button(ng-controller="ModalCtrl" ng-click="UserCtrl.translate('fr')")
+                            md-button(ng-controller="ModalCtrl" ng-click="UserCtrl.translate('fr')" aria-label="Francais")
                                 span(style="display: inline-flex; margin-right: 5px;")
                                     div.iti-flag.fr
                                 span Francais
                 md-menu
-                    md-button(aria-label="menu" ng-click="UserCtrl.openMenu($mdOpenMenu, $event)" style="min-width: 20px;")
+                    md-button(ng-click="UserCtrl.openMenu($mdMenu, $event)" style="min-width: 20px;" aria-label="menu")
                         md-tooltip(md-direction="bottom" md-visible="tooltipVisible") {{"button.menu" | translate}}
-                        md-icon(class="material-icons" aria-label="menu") more_vert
+                        md-icon(md-menu-align-target md-svg-src="/images/icons/ic_more_vert_24px.svg")
                     md-menu-content
                         md-menu-item
-                            md-button(ng-controller="ModalCtrl" ng-click="open('about')")
-                                md-icon.material-icons(md-menu-align-target) info
+                            md-button(ng-controller="ModalCtrl" ng-click="open('about')" aria-label="about")
+                                md-icon(md-menu-align-target md-svg-src="/images/icons/ic_info_24px.svg")
                                 span(translate="layout.accountDetails")
                         md-menu-item
-                            md-button(href="/logout/")
-                                md-icon(md-menu-align-target) exit_to_app
+                            md-button(href="/logout/" aria-label="logout")
+                                md-icon(md-menu-align-target md-svg-src="/images/icons/ic_exit_to_app_24px.svg")
                                 span(translate="layout.logout")
 
 
@@ -117,27 +116,27 @@ html
 
                 md-toolbar-filler(layout layout-align="center center" style="width:250px; background-color: rgb(250, 250, 250)" hide-xs hide-sm hide-md)
                 md-menu-bar.main-menu
-                    md-button(href="#!/monitor/" ng-class="{cur: nav.isActive('monitor')}")
-                        md-icon.material-icons.md-24 recent_actors
+                    md-button(href="#!/monitor/" ng-class="{cur: nav.isActive('monitor')}" aria-label="monitor")
+                        md-icon(md-menu-align-target md-svg-src="/images/icons/ic_recent_actors_24px.svg")
                         div(translate="layout.monitor")
 
-                    md-button(href="#!/credentials/" ng-class="{cur: nav.isActive('credentials')}")
-                        md-icon.material-icons.md-24 contacts
+                    md-button(href="#!/credentials/" ng-class="{cur: nav.isActive('credentials')}" aria-label="credentials")
+                        md-icon(md-menu-align-target md-svg-src="/images/icons/ic_contacts_24px.svg")
                         div(translate="layout.credentials")
 
-                    md-button(href="#!/create/single" ng-class="{cur: nav.isActive('create')}")
-                        md-icon.material-icons.md-24 person_add
+                    md-button(href="#!/create/single" ng-class="{cur: nav.isActive('create')}" aria-label="create")
+                        md-icon(md-menu-align-target md-svg-src="/images/icons/ic_person_add_24px.svg")
                         div(translate="layout.create")
 
-                    md-button(href="#!/import/" ng-class="{cur: nav.isActive('import')}")
-                        md-icon.material-icons.md-24 file_download
+                    md-button(href="#!/import/" ng-class="{cur: nav.isActive('import')}" aria-label="import")
+                        md-icon(md-menu-align-target md-svg-src="/images/icons/ic_file_download_24px.svg")
                         div(translate="layout.import")
 
 
 
         div(id="main")
             md-button.md-fab.md-warn.md-mini(aria-label="menu" style="position: fixed; bottom: 20px; left: 20px" ng-show="UserCtrl.showFab()" hide-gt-md ng-click='UserCtrl.sideNav("left")')
-                md-icon.material-icons.md-12 menu
+                md-icon(md-menu-align-target md-svg-src="/images/icons/ic_menu_24px.svg")
             ng-view
 
 

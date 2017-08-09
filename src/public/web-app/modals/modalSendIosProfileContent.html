@@ -28,10 +28,10 @@
         </md-content>
     </md-dialog-content>
     <md-dialog-actions>
-        <md-button class="md-primary md-raised" ng-click="sendIosProfile()" ng-disabled="!sendByEmailForm.email.$valid || success" translate="button.send">
+        <md-button class="md-primary md-raised" ng-click="sendIosProfile()" ng-disabled="!sendByEmailForm.email.$valid || success" translate="button.send" aria-label="send">
         </md-button>
-        <md-button class="md-primary" ng-click="back()" translate="button.back"></md-button>
-        <md-button class="md-primary" ng-click="close()" translate="button.close"></md-button>
+        <md-button class="md-primary" ng-click="back()" translate="button.back" aria-label="back"></md-button>
+        <md-button class="md-primary" ng-click="close()" translate="button.close" aria-lablel="close"></md-button>
     </md-dialog-actions>
 </md-dialog>
 

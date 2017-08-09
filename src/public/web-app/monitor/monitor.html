@@ -11,26 +11,20 @@
             <h3 translate="filter.userType"></h3>
             <md-list>
                 <md-list-item ng-repeat="userType in userTypes">
-                    <md-checkbox data-name={{userType.name}} ng-model="userType.selected"
-                                 ng-change="change()" aria-label="Display/Hide User Type">
+                    <md-checkbox data-name={{userType.name}} ng-model="userType.selected" ng-change="change()" aria-label="Display/Hide User Type">
                     </md-checkbox>
-                            <span class="lbl fn-ellipsis"
-                                  title={{userType.name}}>{{userType.name | userType}}</span>
+                    <span class="lbl fn-ellipsis" title={{userType.name}}>{{userType.name | userType}}</span>
                 </md-list-item>
             </md-list>
             <h3 translate="filter.status"></h3>
             <md-list>
                 <md-list-item>
-                    <md-checkbox data-name="Connected" ng-model="connected"
-                                 ng-change="change()" aria-label="Display/Hide connected users">
+                    <md-checkbox data-name="Connected" ng-model="connected" ng-change="change()" aria-label="Display/Hide connected users">
                     </md-checkbox>
-                              <span class="lbl fn-ellipsis"
-                                    title="Connected" translate="filter.connected"></span>
+                    <span class="lbl fn-ellipsis" title="Connected" translate="filter.connected"></span>
                 </md-list-item>
                 <md-list-item>
-                    <md-checkbox data-name="Not Connected"
-                                 class="J-check-any" ng-model="notConnected"
-                                 ng-change="change()" aria-label="Display/hide not connected users">
+                    <md-checkbox data-name="Not Connected" class="J-check-any" ng-model="notConnected" ng-change="change()" aria-label="Display/hide not connected users">
                     </md-checkbox>
                     <span class="lbl fn-ellipsis" title="Not Connected" translate="filter.notConnected"></span>
                 </md-list-item>
@@ -38,12 +32,10 @@
             <h3 translate="filter.userGroup"></h3>
             <md-list ng-show="userGroupsLoaded()">
                 <md-list-item ng-repeat="userGroup in userGroups | orderBy:'name'">
-                    <md-checkbox data-name={{userGroup.name}} ng-model="userGroup.selected"
-                                 ng-change="change()" aria-label="Select User Group">
+                    <md-checkbox data-name={{userGroup.name}} ng-model="userGroup.selected" ng-change="change()" aria-label="Select User Group">
 
                     </md-checkbox>
-                            <span class="lbl fn-ellipsis"
-                                  title={{userGroup.name}}>{{userGroup.name}}</span>
+                    <span class="lbl fn-ellipsis" title={{userGroup.name}}>{{userGroup.name}}</span>
                 </md-list-item>
             </md-list>
             <div style="padding: 0;" ng-show="!userGroupsLoaded()">
@@ -67,13 +59,11 @@
 
                         <div class="md-toolbar-tools" id='table-search' ng-show="query.show">
                             <md-input-container md-no-float class="md-block search-tool">
-                                <md-icon class="material-icons search-tool">search</md-icon>
-                                <input ng-model="query.filter" class="search-tool"
-                                       placeholder="{{'button.search' | translate}}">
+                                <md-icon class="search-tool" md-menu-align-target md-svg-src="/images/icons/ic_search_24px.svg"></md-icon>
+                                <input ng-model="query.filter" class="search-tool" placeholder="{{'button.search' | translate}}">
                             </md-input-container>
-                            <button class="md-icon-button md-button" type="button"
-                                    ng-click="removeFilter()" aria-label="close">
-                                <md-icon class="material-icons">close</md-icon>
+                            <button class="md-icon-button md-button" type="button" ng-click="removeFilter()" aria-label="close">
+                                <md-icon md-menu-align-target md-svg-src="/images/icons/ic_close_24px.svg"></md-icon>
                                 <md-tooltip md-direction="bottom">
                                     {{"button.close" | translate}}
                                 </md-tooltip>
@@ -82,9 +72,8 @@
                         </div>
                         <div class="md-toolbar-tools" ng-hide="query.show">
                             <div flex></div>
-                            <button class="md-icon-button md-button" type="button"
-                                    ng-click="query.show = true" aria-label="filter_list">
-                                <md-icon class="material-icons">search</md-icon>
+                            <button class="md-icon-button md-button" type="button" ng-click="query.show = true" aria-label="filter_list">
+                                <md-icon md-menu-align-target md-svg-src="/images/icons/ic_search_24px.svg"></md-icon>
                                 <md-tooltip md-direction="bottom">
                                     {{"button.search" | translate}}
                                 </md-tooltip>
@@ -92,7 +81,7 @@
                                 <div class="md-ripple-container"></div>
                             </button>
                             <md-button class="md-icon-button" ng-click="refresh()" aria-label="refresh_list">
-                                <md-icon class="material-icon">refresh</md-icon>
+                                <md-icon md-menu-align-target md-svg-src="/images/icons/ic_refresh_24px.svg"></md-icon>
                                 <md-tooltip md-direction="bottom">
                                     {{"button.refresh" | translate}}
                                 </md-tooltip>
@@ -103,12 +92,10 @@
                 </md-toolbar>
 
                 <div ng-show="monitorLoaded()" style="background-color: rgb(76,175,80); height: 5px; width: 100%"></div>
-                <md-progress-linear ng-show="!monitorLoaded()" md-mode="indeterminate"
-                                    class="md-accent"></md-progress-linear>
+                <md-progress-linear ng-show="!monitorLoaded()" md-mode="indeterminate" class="md-accent"></md-progress-linear>
                 <div>
                     <div style="position: relative; min-height: 150px;">
-                        <div ng-show="!monitorLoaded()"
-                             style="position: absolute;height: 100%;width: 100%;background-color: rgba(250,250,250,0.7);vertical-align: middle;">
+                        <div ng-show="!monitorLoaded()" style="position: absolute;height: 100%;width: 100%;background-color: rgba(250,250,250,0.7);vertical-align: middle;">
 
                         </div>
                         <div>
@@ -117,90 +104,82 @@
                             <md-table-container>
                                 <table md-table>
                                     <thead md-head>
-                                    <tr md-row>
-                                        <th md-column style="width: 5%">
-                                            <div translate="monitor.table.status"></div>
-                                        </th>
-                                        <th md-column style="width: 15%">
-                                            <div translate="monitor.table.username"></div>
-                                        </th>
-                                        <th md-column style="width: 15%">
-                                            <div translate="monitor.table.ssid"></div>
-                                        </th>
-                                        <th md-column style="width: 65%">
-                                            <div translate="monitor.table.connectedDevices"></div>
-                                        </th>
-                                    </tr>
+                                        <tr md-row>
+                                            <th md-column style="width: 5%">
+                                                <div translate="monitor.table.status"></div>
+                                            </th>
+                                            <th md-column style="width: 15%">
+                                                <div translate="monitor.table.username"></div>
+                                            </th>
+                                            <th md-column style="width: 15%">
+                                                <div translate="monitor.table.ssid"></div>
+                                            </th>
+                                            <th md-column style="width: 65%">
+                                                <div translate="monitor.table.connectedDevices"></div>
+                                            </th>
+                                        </tr>
                                     </thead>
                                     <tbody md-body>
-                                    <tr md-row
-                                        ng-repeat="user in devices | orderBy: 'userName' | limitTo: itemsByPage: (currentPage - 1) * itemsByPage">
-                                        <td md-cell>
-                                            <div style="text-align: center;">
-                                            <span>
+                                        <tr md-row ng-repeat="user in devices | orderBy: 'userName' | limitTo: itemsByPage: (currentPage - 1) * itemsByPage">
+                                            <td md-cell>
+                                                <div style="text-align: center;">
+                                                    <span>
                                                 <md-tooltip md-direction="left">
                                                     {{userString(user)}}
                                                 </md-tooltip>
-                                                <md-icon class="material-icon" style="{{userColor(user)}}" ng-show="userConnected(user) == true">
-                                                    signal_wifi_4_bar
+                                                <md-icon ng-style="{{userColor(user)}}" ng-show="userConnected(user) == true" md-menu-align-target md-svg-src="/images/icons/ic_signal_wifi_4_bar_24px.svg" aria-label="connected">
                                                 </md-icon>
-                                                  <md-icon class="material-icon" style="{{userColor(user)}}" ng-show="userConnected(user) == false">
-                                                      signal_wifi_off
-                                                  </md-icon>
+                                                <md-icon ng-style="{{userColor(user)}}" ng-show="userConnected(user) == false" md-menu-align-target md-svg-src="/images/icons/ic_signal_wifi_off_24px.svg" aria-label="not connected">
+                                                </md-icon>
                                             </span>
-                                            </div>
-                                        </td>
-                                        <td md-cell>
-                                            <div>{{user.userName}}</div>
-                                        </td>
-                                        <td md-cell>
-                                            <div>{{user.ssids|ssidStringFromArray}}</div>
-                                        </td>
-                                        <td md-cell>
-                                            <div><a ng-click="showClients(user)" style="{{clientsLink(user)}}">{{user.clients.length}}
+                                                </div>
+                                            </td>
+                                            <td md-cell>
+                                                <div>{{user.userName}}</div>
+                                            </td>
+                                            <td md-cell>
+                                                <div>{{user.ssids|ssidStringFromArray}}</div>
+                                            </td>
+                                            <td md-cell>
+                                                <div><a ng-click="showClients(user)" ng-style="{{clientsLink(user)}}">{{user.clients.length}}
                                                 client(s)</a>
-                                                <table ng-show="user.showClients">
-                                                    <thead>
-                                                    <tr>
-                                                        <th translate="monitor.table.status"></th>
-                                                        <th translate="monitor.table.hostname"></th>
-                                                        <th translate="monitor.table.macAddress"></th>
-                                                        <th translate="monitor.table.os"></th>
-                                                        <th translate="monitor.table.ipAddress"></th>
-                                                        <th translate="monitor.table.userProfile"></th>
-                                                        <th translate="monitor.table.rssi"></th>
-                                                        <th translate="monitor.table.snr"></th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr ng-repeat="cli in user.clients " style="text-align: center;">
-                                                        <td>
-                                                        <span>
-                                                            <md-icon class="material-icone"
-                                                                     style="{{clientColor(cli.clientHealth)}}">
-                                                                signal_wifi_4_bar
-                                                            </md-icon>
+                                                    <table ng-show="user.showClients">
+                                                        <thead>
+                                                            <tr>
+                                                                <th translate="monitor.table.status"></th>
+                                                                <th translate="monitor.table.hostname"></th>
+                                                                <th translate="monitor.table.macAddress"></th>
+                                                                <th translate="monitor.table.os"></th>
+                                                                <th translate="monitor.table.ipAddress"></th>
+                                                                <th translate="monitor.table.userProfile"></th>
+                                                                <th translate="monitor.table.rssi"></th>
+                                                                <th translate="monitor.table.snr"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="cli in user.clients " style="text-align: center;">
+                                                                <td>
+                                                                    <span>
+                                                            <md-icon ng-style="{{clientColor(cli.clientHealth)}}" md-menu-align-target md-svg-src="/images/icons/ic_signal_wifi_4_bar_24px.svg"></md-icon>
                                                             </span>
-                                                        </td>
-                                                        <td>{{cli.hostName}}</td>
-                                                        <td>{{cli.clientMac}}</td>
-                                                        <td>{{cli.os}}</td>
-                                                        <td>{{cli.ip}}</td>
-                                                        <td>{{cli.userProfile}}</td>
-                                                        <td>{{cli.rssi}}</td>
-                                                        <td>{{cli.snr}}</td>
-                                                    </tr>
+                                                                </td>
+                                                                <td>{{cli.hostName}}</td>
+                                                                <td>{{cli.clientMac}}</td>
+                                                                <td>{{cli.os}}</td>
+                                                                <td>{{cli.ip}}</td>
+                                                                <td>{{cli.userProfile}}</td>
+                                                                <td>{{cli.rssi}}</td>
+                                                                <td>{{cli.snr}}</td>
+                                                            </tr>
 
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </td>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </td>
                                     </tbody>
                                 </table>
                             </md-table-container>
-                            <md-table-pagination md-limit="itemsByPage" md-limit-options="[10, 20, 50, 100 ]"
-                                                 md-page="currentPage"
-                                                 md-total="{{devices.length}}"></md-table-pagination>
+                            <md-table-pagination md-limit="itemsByPage" md-limit-options="[10, 20, 50, 100 ]" md-page="currentPage" md-total="{{devices.length}}"></md-table-pagination>
                         </div>
                         <div class="grid-mark" ng-style="monitorLoaded() === true && {'display': 'none'}"></div>
                     </div>

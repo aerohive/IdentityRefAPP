@@ -4,7 +4,7 @@ var apiConf = require("../../../config.js").devAccount;
 
 module.exports.GET = function (xapi, path, callback) {
     var rejectUnauthorized = true;
-    if (xapi.rejectUnauthorized) rejectUnauthorized = xapi.rejectUnauthorized;
+    if (xapi.rejectUnauthorized != undefined) rejectUnauthorized = xapi.rejectUnauthorized;
 
     var options = {
         rejectUnauthorized: rejectUnauthorized,
@@ -24,7 +24,7 @@ module.exports.GET = function (xapi, path, callback) {
 
 module.exports.POST = function (xapi, path, data, callback) {
     var rejectUnauthorized = true;
-    if (xapi.rejectUnauthorized) rejectUnauthorized = xapi.rejectUnauthorized;
+    if (xapi.rejectUnauthorized != undefined) rejectUnauthorized = xapi.rejectUnauthorized;
     var options = {
         rejectUnauthorized: rejectUnauthorized,
         host: xapi.vpcUrl,
@@ -44,7 +44,7 @@ module.exports.POST = function (xapi, path, data, callback) {
 };
 module.exports.PUT = function (xapi, path, callback) {
     var rejectUnauthorized = true;
-    if (xapi.rejectUnauthorized) rejectUnauthorized = xapi.rejectUnauthorized;
+    if (xapi.rejectUnauthorized != undefined) rejectUnauthorized = xapi.rejectUnauthorized;
     var options = {
         rejectUnauthorized: rejectUnauthorized,
         host: xapi.vpcUrl,
@@ -63,7 +63,7 @@ module.exports.PUT = function (xapi, path, callback) {
 };
 module.exports.DELETE = function (xapi, path, callback) {
     var rejectUnauthorized = true;
-    if (xapi.rejectUnauthorized) rejectUnauthorized = xapi.rejectUnauthorized;
+    if (xapi.rejectUnauthorized != undefined) rejectUnauthorized = xapi.rejectUnauthorized;
     var options = {
         rejectUnauthorized: rejectUnauthorized,
         host: xapi.vpcUrl,

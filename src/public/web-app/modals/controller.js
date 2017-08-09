@@ -119,7 +119,6 @@ angular.module('Modals').controller('ModalCtrl', function ($scope, $rootScope, $
     };
 });
 
-
 angular.module('Modals').controller('DialogController', function ($scope, $mdDialog, items) {
     // items is injected in the controller, not its scope!
     $scope.items = items;
@@ -159,8 +158,10 @@ angular.module('Modals').controller('DialogSingleController', function ($scope, 
         });
     }
 
-    $scope.isPPSK = function(){
-        return $scope.account.authType === "PPSK";
+    $scope.isPPSK = function () {
+        if ($scope.account.authType)
+            return $scope.account.authType === "PPSK";
+        else return false;
     };
 
     $scope.close = function () {
@@ -213,7 +214,8 @@ angular.module('Modals').controller('DialogSingleController', function ($scope, 
             locals: {
                 items: {
                     user: $scope.user,
-                    account: $scope.account
+                    account: $scope.account,
+                    backModal: "createSingle"
                 }
             }
         });
@@ -222,7 +224,7 @@ angular.module('Modals').controller('DialogSingleController', function ($scope, 
 
 angular.module("Modals").controller("DialogSendByEmailController", function ($scope, $rootScope, $mdDialog, sendCredentialsService, items) {
     $scope.backModal = items.backModal;
-    if (items.user){
+    if (items.user) {
         $scope.email = items.user.email;
         $scope.user = items.user;
     } else {
@@ -282,7 +284,7 @@ angular.module("Modals").controller("DialogSendIosProfileController", function (
 
 angular.module("Modals").controller("DialogSendBySmsController", function ($scope, $rootScope, $mdDialog, sendCredentialsService, items) {
     $scope.backModal = items.backModal;
-    if (items.user){
+    if (items.user) {
         $scope.email = items.user.phone;
         $scope.user = items.user;
     } else {
@@ -440,7 +442,7 @@ angular.module('Modals').controller('RenewSingleUserController', function ($scop
 
     if (!items.account) {
         $scope.account = {
-            loginName : $scope.user.userName,
+            loginName: $scope.user.userName,
             id: $scope.user.id
         };
         $scope.isWorking = true;
@@ -458,7 +460,7 @@ angular.module('Modals').controller('RenewSingleUserController', function ($scop
     } else {
         $scope.success = true;
         $scope.account = {
-            loginName : $scope.user.userName,
+            loginName: $scope.user.userName,
             id: $scope.user.id
         };
     }
