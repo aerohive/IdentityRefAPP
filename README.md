@@ -1,3 +1,6 @@
+# NO LONGER MAINTAINED
+As of August 30, 2019 this project is no longer maintained. It should still (probably) work, but I am no longer providing support, fixing issues, or adding new features.
+
 # identity
 
 This is a Free web app built to work with Aerohive APIs. This app is designed to provide a user friendly interface to manage/create/remove/renew PPSK or login/pwd account stored on HiveManager NG (Cloud or OnPremise)

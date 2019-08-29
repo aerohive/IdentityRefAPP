@@ -62,7 +62,9 @@ h3, .h3 {
     color: white;
     margin: 1px 0;
 }
-
+md-content {
+    background-color: #fff !important;
+}
 .main-menu .md-button {
     padding: 5px !important;
     margin: 0 10px !important;
@@ -108,6 +110,9 @@ h3, .h3 {
 
 md-sidenav {
     padding-top: 70px;
+}
+.md-sidenav-left {
+    height: 100%;
 }
 
 input.search-tool {

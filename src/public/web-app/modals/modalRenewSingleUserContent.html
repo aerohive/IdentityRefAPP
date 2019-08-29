@@ -1,4 +1,5 @@
 <md-dialog aria-label="Renew User">
+    <md-dialog-content>
     <md-toolbar>
         <div class="md-toolbar-tools">
             <h2 class="md-title" translate="modal.renew.title"></h2>
@@ -8,6 +9,7 @@
          style="background-color: rgb(76,175,80); height: 5px; width: 100%"></div>
     <md-progress-linear ng-show="isWorking" md-mode="indeterminate"
                         class="md-accent"></md-progress-linear>
+    </md-dialog-content>
     <md-dialog-content class="md-dialog-content" ng-show="isWorking">
         <md-content>
             <div><span translate="modal.theAccount"></span> {{user.userName}} <span translate="modal.renew.isBeingRenewed"></span>.</div>

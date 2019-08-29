@@ -10,132 +10,120 @@
                 <qrcode version="8" error-correction-level="M" size="200" data="{{qrcodeString}}"></qrcode>
             </div>
         </md-content>
-        <md-content layout="column" layout-gt-sm="row">
-            <md-content md-whiteframe="3" style="margin:5px;width: 250px;">
+        <md-content layout="column" layout-gt-sm="column">
+            <div ng-show="clientConnected"
+                style="background-color: rgb(76,175,80); height: 5px; width: 100%"></div>
+           <md-progress-linear ng-show="!clientConnected" md-mode="indeterminate"
+                               class="md-accent"></md-progress-linear>
+            <md-content layout="column" layout-gt-sm="row">
+                <md-content md-whiteframe="3" style="margin:5px;width: 250px;">
 
-                <h3 translate="modal.qrcode.connectionStatus"></h3>
+                    <h3 translate="modal.qrcode.connectionStatus"></h3>
 
-                <div ng-show="clientConnected"
-                     style="background-color: rgb(76,175,80); height: 5px; width: 100%"></div>
-                <md-progress-linear ng-show="!clientConnected" md-mode="indeterminate"
-                                    class="md-accent"></md-progress-linear>
+                    
 
-                <md-table-container>
+                    <md-table-container>
+                        <table md-table style="text-align: left">
+                            <tbody md-body>
+                            <tr md-row style="height: 40px;">
+                                <th md-cell style="width: 30%"><span translate="modal.qrcode.connectionStatus"></span>:</th>
+                                <td md-cell style="width: 70%; padding-right: 0;">
+                                    <div style="text-align: center;">
+                                    <span>
+                                        <md-tooltip md-direction="left">
+                                            {{userString(account.loginName, connectionStatus.connected)}}
+                                        </md-tooltip>
+                                        <md-icon class="material-icon" style="{{userColor(connectionStatus.connected)}}" md-svg-src="/images/icons/ic_signal_wifi_4_bar_24px.svg"></md-icon>
+                                    </span>
+                                    </div>
+                            </tr>
+                            <tr md-row style="height: 40px;">
+                                <th md-cell><span translate="modal.qrcode.ssid"></span></th>
+                                <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.ssid}}</td>
+                            </tr>
+                            <tr md-row style="height: 40px;">
+                                <th md-cell><span translate="modal.qrcode.ip"></span></th>
+                                <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.ip}}</td>
+                            </tr>
+                            <tr md-row style="height: 40px;">
+                                <th md-cell><span translate="modal.qrcode.radioHealth"></span></th>
+                                <td md-cell style="width: 70%; padding-right: 0;">
+                                    <div style="text-align: center;">
+                                    <span>
+                                        <md-tooltip md-direction="left">
+                                            {{connectionStatus.radioHealth}}
+                                        </md-tooltip>
+                                        <md-icon class="material-icon" style="{{healthColor(connectionStatus.radioHealth)}}" md-svg-src="/images/icons/ic_signal_wifi_4_bar_24px.svg"></md-icon>
+                                    </span>
+                                    </div>
+
+                            </tr>
+                            <tr md-row style="height: 40px;">
+                                <th md-cell><span translate="modal.qrcode.networkHealth"></span></th>
+                                <td md-cell style="width: 70%; padding-right: 0;">
+                                    <div style="text-align: center;">
+                                    <span>
+                                        <md-tooltip md-direction="left">
+                                            {{connectionStatus.networkHealth}}
+                                        </md-tooltip>
+                                        <md-icon class="material-icon" style="{{healthColor(connectionStatus.networkHealth)}}" md-svg-src="/images/icons/ic_signal_wifi_4_bar_24px.svg"></md-icon>
+                                    </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr md-row style="height: 40px;">
+                                <th md-cell><span translate="modal.qrcode.applicationHealth"></span></th>
+                                <td md-cell style="width: 70%; padding-right: 0;">
+                                    <div style="text-align: center;">
+                                    <span>
+                                        <md-tooltip md-direction="left">
+                                            {{connectionStatus.applicationHealth}}
+                                        </md-tooltip>
+                                        <md-icon class="material-icon" style="{{healthColor(connectionStatus.applicationHealth)}}" md-svg-src="/images/icons/ic_signal_wifi_4_bar_24px.svg"></md-icon>
+                                    </span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </md-table-container>
+                </md-content>
+                <md-content md-whiteframe="3" style="margin:5px;width: 250px;">
+
+                    <h3 translate="modal.qrcode.clientDetails"></h3>
+                
+
                     <table md-table style="text-align: left">
                         <tbody md-body>
                         <tr md-row style="height: 40px;">
-                            <th md-cell style="width: 30%"><span translate="modal.qrcode.connectionStatus"></span>:</th>
-                            <td md-cell style="width: 70%; padding-right: 0;">
-                                <div style="text-align: center;">
-                                <span>
-                                    <md-tooltip md-direction="left">
-                                        {{userString(account.loginName, connectionStatus.connected)}}
-                                    </md-tooltip>
-                                    <md-icon class="material-icon" style="{{userColor(connectionStatus.connected)}}">
-                                        signal_wifi_4_bar
-                                    </md-icon>
-                                </span>
-                                </div>
+                            <th md-cell style="width: 30%"><span translate="modal.qrcode.deviceOs"></span></th>
+                            <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.os}}</td>
                         </tr>
                         <tr md-row style="height: 40px;">
-                            <th md-cell><span translate="modal.qrcode.ssid"></span></th>
-                            <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.ssid}}</td>
+                            <th md-cell><span translate="modal.qrcode.hostname"></span></th>
+                            <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.hostName}}</td>
                         </tr>
                         <tr md-row style="height: 40px;">
-                            <th md-cell><span translate="modal.qrcode.ip"></span></th>
-                            <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.ip}}</td>
+                            <th md-cell><span translate="modal.qrcode.userProfile"></span></th>
+                            <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.userProfile}}</td>
                         </tr>
                         <tr md-row style="height: 40px;">
-                            <th md-cell><span translate="modal.qrcode.radioHealth"></span></th>
-                            <td md-cell style="width: 70%; padding-right: 0;">
-                                <div style="text-align: center;">
-                                <span>
-                                    <md-tooltip md-direction="left">
-                                        {{connectionStatus.radioHealth}}
-                                    </md-tooltip>
-                                    <md-icon class="material-icon"
-                                             style="{{healthColor(connectionStatus.radioHealth)}}">
-                                        signal_wifi_4_bar
-                                    </md-icon>
-                                </span>
-                                </div>
-
+                            <th md-cell><span translate="modal.qrcode.macAddress"></span></th>
+                            <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.clientMac}}</td>
                         </tr>
                         <tr md-row style="height: 40px;">
-                            <th md-cell><span translate="modal.qrcode.networkHealth"></span></th>
-                            <td md-cell style="width: 70%; padding-right: 0;">
-                                <div style="text-align: center;">
-                                <span>
-                                    <md-tooltip md-direction="left">
-                                        {{connectionStatus.networkHealth}}
-                                    </md-tooltip>
-                                    <md-icon class="material-icon"
-                                             style="{{healthColor(connectionStatus.networkHealth)}}">
-                                        signal_wifi_4_bar
-                                    </md-icon>
-                                </span>
-                                </div>
-                            </td>
+                            <th md-cell><span translate="modal.qrcode.radioBand"></span></th>
+                            <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.radioBand}}</td>
                         </tr>
                         <tr md-row style="height: 40px;">
-                            <th md-cell><span translate="modal.qrcode.applicationHealth"></span></th>
-                            <td md-cell style="width: 70%; padding-right: 0;">
-                                <div style="text-align: center;">
-                                <span>
-                                    <md-tooltip md-direction="left">
-                                        {{connectionStatus.applicationHealth}}
-                                    </md-tooltip>
-                                    <md-icon class="material-icon"
-                                             style="{{healthColor(connectionStatus.applicationHealth)}}">
-                                        signal_wifi_4_bar
-                                    </md-icon>
-                                </span>
-                                </div>
-
-                            </td>
+                            <th md-cell><span translate="modal.qrcode.80211"></span></th>
+                            <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.clientProtocol}}</td>
                         </tr>
                         </tbody>
                     </table>
-                </md-table-container>
-            </md-content>
-            <md-content md-whiteframe="3" style="margin:5px;width: 250px;">
-
-                <h3 translate="modal.qrcode.clientDetails"></h3>
-                <div ng-show="clientConnected"
-                     style="background-color: rgb(76,175,80); height: 5px; width: 100%"></div>
-                <md-progress-linear ng-show="!clientConnected" md-mode="indeterminate"
-                                    class="md-accent"></md-progress-linear>
-
-
-                <table md-table style="text-align: left">
-                    <tbody md-body>
-                    <tr md-row style="height: 40px;">
-                        <th md-cell style="width: 30%"><span translate="modal.qrcode.deviceOs"></span></th>
-                        <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.os}}</td>
-                    </tr>
-                    <tr md-row style="height: 40px;">
-                        <th md-cell><span translate="modal.qrcode.hostname"></span></th>
-                        <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.hostName}}</td>
-                    </tr>
-                    <tr md-row style="height: 40px;">
-                        <th md-cell><span translate="modal.qrcode.userProfile"></span></th>
-                        <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.userProfile}}</td>
-                    </tr>
-                    <tr md-row style="height: 40px;">
-                        <th md-cell><span translate="modal.qrcode.macAddress"></span></th>
-                        <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.clientMac}}</td>
-                    </tr>
-                    <tr md-row style="height: 40px;">
-                        <th md-cell><span translate="modal.qrcode.radioBand"></span></th>
-                        <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.radioBand}}</td>
-                    </tr>
-                    <tr md-row style="height: 40px;">
-                        <th md-cell><span translate="modal.qrcode.80211"></span></th>
-                        <td md-cell style="width: 70%; padding-right: 0;">{{connectionStatus.clientProtocol}}</td>
-                    </tr>
-                    </tbody>
-                </table>
-                </md-table-container>
+                    </md-table-container>
+                </md-content>
             </md-content>
         </md-content>
     </md-dialog-content>

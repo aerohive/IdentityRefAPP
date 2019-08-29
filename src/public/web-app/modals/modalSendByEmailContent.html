@@ -1,35 +1,34 @@
 <md-dialog aria-label="Send By Email">
+    <md-dialog-content>
     <md-toolbar>
         <div class="md-toolbar-tools">
             <h2 class="md-title" translate="button.sendByEmail"></h2>
         </div>
     </md-toolbar>
-    <div ng-show="!isWorking"
-         style="background-color: rgb(76,175,80); height: 5px; width: 100%"></div>
-    <md-progress-linear ng-show="isWorking" md-mode="indeterminate"
-                        class="md-accent"></md-progress-linear>
+    <div ng-show="!isWorking" style="background-color: rgb(76,175,80); height: 5px; width: 100%"></div>
+    <md-progress-linear ng-show="isWorking" md-mode="indeterminate" class="md-accent"></md-progress-linear>
+    </md-dialog-content>
     <md-dialog-content class="md-dialog-content">
         <md-content>
-            <span ng-show="account.loginName"><span translate="modal.sendByEmail.message1"></span> {{account.loginName}} <span translate="modal.sendByEmail.message2"></span>.</span>
-            <span ng-show="account.userName"><span translate="modal.sendByEmail.message1"></span> {{account.userName}} <span translate="modal.sendByEmail.message2"></span>.</span>
-            <form name="sendByEmailForm"  style="margin-top: 50px;">
-            <md-input-container class="md-block flex-gt-sm">
-                <label for="email" translate="modal.sendByEmail.email"></label>
-                <input id="email" name="email" class="ng-pristine ng-untouched ng-valid ng-empty" type="email"
-                       ng-model="email" required/>
-                <div class="md-errors-spacer"></div>
-            </md-input-container>
-            </form>
-            <div style="text-align: center; color: green; height: 40px; vertical-align: bottom; line-height: 40px;">
-                <span style="color: green" ng-show="success"><span  translate="modal.sendByEmail.success"></span> {{email}}!</span>
-                <span style="color: red" ng-show="failed">{{failed}}</span>
-            </div>
+            <div><span translate="modal.sendByEmail.message1"></span><b> {{account.userName}} </b>
+            <span translate="modal.sendByEmail.message2"></span>.</div>
+                <form name="sendByEmailForm" style="margin-top: 50px; max-width:99%">
+                    <md-input-container class="md-block flex-gt-sm">
+                        <label for="email" translate="modal.sendByEmail.email"></label>
+                        <input id="email" name="email" class="ng-pristine ng-untouched ng-valid ng-empty" type="email" ng-model="email" required/>
+                        <div class="md-errors-spacer"></div>
+                    </md-input-container>
+                </form>
+                <div style="text-align: center; color: green; height: 40px; vertical-align: bottom; line-height: 40px;">
+                    <span style="color: green" ng-show="success"><span  translate="modal.sendByEmail.success"></span> {{email}}!</span>
+                    <span style="color: red" ng-show="failed">{{failed}}</span>
+                </div>
         </md-content>
     </md-dialog-content>
     <md-dialog-actions>
-        <md-button class="md-primary md-raised" ng-click="sendByEmail()" ng-disabled="!sendByEmailForm.email.$valid" translate="button.send" md-auto-focus="true" aria-label="send"></md-button>
-        <md-button class="md-primary" ng-click="back()" ng-show="backModal != undefined" translate="button.back" aria-label="close"></md-button>
         <md-button class="md-primary" ng-click="close()" translate="button.close" aria-label="close"></md-button>
+        <md-button class="md-primary" ng-click="back()" ng-show="backModal != undefined" translate="button.back" aria-label="close"></md-button>
+        <md-button class="md-primary md-raised" ng-click="sendByEmail()" ng-disabled="!sendByEmailForm.email.$valid" translate="button.send"
+            md-auto-focus="true" aria-label="send"></md-button>
     </md-dialog-actions>
 </md-dialog>
-

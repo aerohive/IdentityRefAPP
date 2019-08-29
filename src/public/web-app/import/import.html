@@ -1,5 +1,5 @@
 <md-content style="padding-bottom: 15px;" layout="column">
-    <md-content layout-gt-sm="row" layout="column">
+    <md-content layout-gt-sm="row" layout="column" style="background-color: rgb(250, 250, 250) !important;">
         <article md-whiteframe="5" flex-gt-md="50">
             <md-toolbar>
                 <div class="md-toolbar-tools">
@@ -50,11 +50,12 @@
 
             </md-content>
             <md-content layout="column" layout-padding style="padding-bottom: 0;">
-                <md-input-container class="md-block">
+                <md-input-container class="md-block" style="margin-bottom: 0px">
                     <label for="delimiter" translate="import.csvDelimiter"></label>
                     <input id="delimiter" class="ng-valid md-input ng-dirty ng-valid-parse ng-touched"
                            ng-model="delimiter"/>
                 </md-input-container>
+                <span><b style="color: red">Note: </b>There is no specific format for the CSV file. You will be able to bind rows from your file to a specific field once you have selected your CSV file.</span>
             </md-content>
 
         </article>

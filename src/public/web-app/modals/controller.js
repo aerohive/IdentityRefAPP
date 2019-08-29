@@ -159,7 +159,7 @@ angular.module('Modals').controller('DialogSingleController', function ($scope, 
     }
 
     $scope.isPPSK = function () {
-        if ($scope.account.authType)
+        if ($scope.account && $scope.account.authType)
             return $scope.account.authType === "PPSK";
         else return false;
     };
@@ -245,6 +245,7 @@ angular.module("Modals").controller("DialogSendByEmailController", function ($sc
         });
     };
     $scope.back = function () {
+        $rootScope.displayed = false;
         $rootScope.$broadcast(items.backModal, items.user, items.account);
     };
     $scope.close = function () {
@@ -273,6 +274,7 @@ angular.module("Modals").controller("DialogSendIosProfileController", function (
         $scope.success = false;
     });
     $scope.back = function () {
+        $rootScope.displayed = false;
         $rootScope.$broadcast('createSingle', items.user, items.account);
     };
     $scope.close = function () {
@@ -304,6 +306,7 @@ angular.module("Modals").controller("DialogSendBySmsController", function ($scop
         });
     };
     $scope.back = function () {
+        $rootScope.displayed = false;
         $rootScope.$broadcast(items.backModal, items.user, items.account);
     };
     $scope.close = function () {
@@ -346,7 +349,7 @@ angular.module('Modals').controller('DialogQrCodeController', function ($scope, 
             if (promise && promise.error) $rootScope.$broadcast("apiWarning", promise.error);
             else {
                 $scope.connectionStatus = promise.data;
-                if ($scope.connectionStatus.connected) $interval.cancel(checkStatus);
+                if ($scope.connectionStatus.connected == true) $interval.cancel(checkStatus);
                 $scope.clientConnected = $scope.connectionStatus.connected;
             }
 
@@ -357,7 +360,7 @@ angular.module('Modals').controller('DialogQrCodeController', function ($scope, 
         if (!waitingForResponse) {
             this.checkConnection($scope.account.loginName);
         }
-    }.bind(this), 1000);
+    }.bind(this), 5000);
 
     $scope.userString = function (userName, isConnected) {
         if (isConnected) return userName + " is currently not connected.";
@@ -375,6 +378,7 @@ angular.module('Modals').controller('DialogQrCodeController', function ($scope, 
 
     $scope.back = function () {
         $interval.cancel(checkStatus);
+        $rootScope.displayed = false;
         $rootScope.$broadcast('createSingle', items.user, items.account);
     };
     $scope.close = function () {
